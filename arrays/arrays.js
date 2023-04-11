@@ -75,7 +75,12 @@ names.pop();
 console.log(names); // => ['abid','smair','adil','alice'];
 
 6.PUSH : to add last element from an array. 
+example:
+let names = ['abid','smair','adil'];
+names.push('hello');
+console.log(names); // => ['abid','smair','adil','hello'];
 
+7.
 
 
 
