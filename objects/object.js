@@ -110,10 +110,31 @@ for(let i=0 ; i<emp.length ; i++){
 // object within the object hierarchy
 
 let student= {
+    name: 'Student',
+    age: 29,
+    course :{
+        courseName: 'FSdev',
+        platform : 'lets Upgarde',
+        duration : '6 months',
+        rank : 2,
 
+    },
+    college :{
+        name: 'mumbai University',
+        city : 'mumbai',
+        estd :1927,
+    },
+    address : {
+        city:'mumbai',
+        state:'maharashtra',
+        country:'india',
+    },
 }
 
+// Access the data present 
 
+console.log(student.address.country); //india
+console.log(student.age); // 29
 
 
 
