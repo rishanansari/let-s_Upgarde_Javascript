@@ -137,4 +137,51 @@ console.log(student.address.country); //india
 console.log(student.age); // 29
 
 
+// 4 .  OBJECT ARRAY OBJECT
+
+let data  = {
+    apples : [
+        {color : "red", quanity : 2},
+        {color : "green", quanity : 5},
+        {color : "black", quanity : 3},
+    ],
+    banana : [
+        {color : "yellow", quanity : 7},
+        {color : "green", quanity : 5},
+    ],
+    orange : [
+        {color : "yellow", quanity : 12},
+        {color : "orange", quanity : 15},
+    ],
+}
+
+console.log(data); //gives full object
+
+for(let fruit in data){
+    console.log(fruit); //apple banana orange type string
+}
+
+for(let fruit in data){
+    console.log(data[fruit]); //value of every fruits (means all arrays )
+}
+
+let employeeeee = [
+    {abid : "name" , age : 28},
+    {abid : "name" , age : 28},
+    {abid : "name" , age : 28},
+]
+
+for(let fruit of employeeeee){
+    console.log(fruit.abid); // 
+}
+
+
+
+
+
+
+
+
+
+
 
