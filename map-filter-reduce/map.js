@@ -56,3 +56,6 @@ console.log(empName2.reverse()) //['jim', 'julia', 'jam', 'jenny', 'jhon']
 console.log(empName2.sort()) //['jam', 'jenny', 'jhon', 'jim', 'julia']
 
 // here we can write multiple method in a chaining vut in FOR EACh we can not write. 
+
+
+// To fetch the data from MAP method (rest countries api)
