@@ -158,22 +158,14 @@ let data  = {
 console.log(data); //gives full object
 
 for(let fruit in data){
-    console.log(fruit); //apple banana orange type string
+    console.log(fruit); //apple banana orange type string gives keys
 }
 
 for(let fruit in data){
     console.log(data[fruit]); //value of every fruits (means all arrays )
 }
 
-let employeeeee = [
-    {abid : "name" , age : 28},
-    {abid : "name" , age : 28},
-    {abid : "name" , age : 28},
-]
 
-for(let fruit of employeeeee){
-    console.log(fruit.abid); // 
-}
 
 
 
