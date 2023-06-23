@@ -157,19 +157,49 @@ let data  = {
 
 console.log(data); //gives full object
 
-for(let fruit in data){
-    console.log(fruit); //apple banana orange type string gives keys
-}
+// key in object 
+// for(let fruit in data){
+//     console.log(fruit); //apple banana orange type string gives keys
+// }
+
+// for(let fruit in data){
+//     console.log(data[fruit]); //value of every fruits (means all arrays )
+// }
 
 for(let fruit in data){
-    console.log(data[fruit]); //value of every fruits (means all arrays )
+    for(let i=0 ; i<data[fruit].length ; i++){
+        console.log(data[fruit][i]);
+        // console.log(data[fruit][i].color);
+        // console.log(data[fruit][i].quanity);
+    }
 }
 
+// console.log(data[fruit][i]);
+// output
+// {color: 'red', quanity: 2}
+// {color: 'green', quanity: 5}
+// {color: 'black', quanity: 3}
+// {color: 'yellow', quanity: 7}
+// {color: 'green', quanity: 5}
+// {color: 'yellow', quanity: 12}
+// {color: 'orange', quanity: 15}
 
+// console.log(data[fruit][i].color/quantity);
+// red
+// green
+// black
+// yellow
+// green
+// yellow
+// orange
 
-
-
-
+// 2
+// 5
+// 3
+// 7
+// 5
+// 12
+// 15
 
 
 
