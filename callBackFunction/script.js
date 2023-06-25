@@ -1,18 +1,18 @@
 //callback function : a function which is passed as an argument to another function.
 // one of the way which can help to perfom async programming in javascript.
 
-function callbackfunction(){
-    console.log("callback function called");
-}
+// function callbackfunction(){
+//     console.log("callback function called");
+// }
 
-function myFun(){
+// function myFun(){
     
-    console.log("My function called");
-    callbackfunction(); //if it is above then callbackfunction will execute first the myFun console
+//     console.log("My function called");
+//     callbackfunction(); //if it is above then callbackfunction will execute first the myFun console
     
-}
+// }
     
-myFun(callbackfunction);
+// myFun(callbackfunction);
 
 // EXPAMLE 2 : 
 // function getData(){
