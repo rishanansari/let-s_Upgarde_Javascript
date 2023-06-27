@@ -9,9 +9,12 @@
 // guess.innerHTML = number;
 // console.log(number);
 
-let GuessNum  = document.getElementById("value")
+
 let Number = prompt("Enter Your Number between 1-10");
+let GuessNum  = document.getElementById("value")
 GuessNum.innerHTML = `Your Number is ${Number}`
+
+
     // create  a promise construction
 
 const promise = new Promise((resolve , reject)=>{
@@ -22,8 +25,9 @@ const RandomNumber = Math.floor(Math.random()*10);
 randomSpan.innerHTML = RandomNumber;
 console.log(RandomNumber);
 
-if (RandomNumber === Number) {
+if (RandomNumber == Number) {
     resolve("Hurray! Your Number is guessed correctly")
+    
 } else{
     reject("Uh oh! Wrongly Gussed...")
 }
