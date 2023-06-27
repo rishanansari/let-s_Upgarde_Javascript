@@ -91,3 +91,72 @@ doProject.then((msg)=>{
         });
     });
 });
+
+
+
+// ASSIGNMENT
+
+// Create 3 promises
+// 1.roomclean->5000
+// 2.removeGarbage->3000
+// 3.getPrize->2000
+
+// promise 1 
+let roomClean = new Promise((resolve , reject)=>{
+    setTimeout(() => {
+        let isRoomClean = true;
+        if (isRoomClean) {
+            resolve("Room Clean Completed");
+        }else{
+            reject("Room Clean is not completed");
+        }
+    }, 5000);
+})
+
+// prmoise 2
+
+let removeGarbage = new Promise((resolve , reject)=>{
+    setTimeout(() => {
+        let isRemoveGarbage = true;
+        if (isRemoveGarbage) {
+            resolve("Garbages Clean Completed");
+        }else{
+            reject("Garbages Clean is not completed");
+        }
+    }, 3000);
+})
+
+// promise 3
+
+let getPrize = new Promise((resolve , reject)=>{
+    setTimeout(() => {
+        let isGetPrize = true;
+        if (isGetPrize) {
+            resolve("Won the Prize");
+        }else{
+            reject("Prize not available");
+        }
+    }, 2000);
+})
+
+//Call the promise and chained this promised one inside other
+ 
+roomClean.then((msg)=>{
+ let newMsg = `${msg}`;
+    removeGarbage.then((msg)=>{
+        newMsg += ` ${msg}`;
+            getPrize.then((msg)=>{
+                newMsg += ` ${msg}`;
+                console.log(`${newMsg}...finally I got the prize...wow!`);
+            })
+            .catch((msg)=>{
+                console.log(`${msg}`)
+            })
+            .catch((msg)=>{
+                console.log(`${msg}`)
+            })
+            .catch((msg)=>{
+                console.log(`${msg}`)
+            });
+    })
+})
