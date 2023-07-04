@@ -50,3 +50,33 @@ function getApiData(){
     }))
     .catch(err=>console.log(err));
 }
+
+// method 4 Random dog fetch from API 
+let dogResult = document.getElementById("dog_result")
+
+document.getElementById("dog_btn").addEventListener("click",getDogData);
+
+function getDogData(){
+    fetch("https://random.dog/woof.json")
+    .then(res=>res.json())
+    .then((data)=>{
+console.log(data);
+if(data.url.includes("mp4")){
+    dogResult.innerHTML= `
+    <video width="400" controls>
+    <source src="${data.url}" type="video/mp4">
+    <source src="${data.url}" type="video/ogg">
+    Your browser does not support the video tag.
+  </video>`
+}else{
+    dogResult.innerHTML =`
+    <img src="${data.url}" alt="dogImage" width="400"/>
+    `
+}
+
+
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
