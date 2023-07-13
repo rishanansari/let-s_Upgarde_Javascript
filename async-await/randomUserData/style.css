@@ -25,3 +25,9 @@
     background-color: rgb(0, 129, 34) !important;
     color : rgb(218, 255, 164) !important;
 }
+
+@media screen and (max-width:540px) {
+    .card{
+        width: 90% !important;
+    }
+}

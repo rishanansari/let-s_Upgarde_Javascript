@@ -14,7 +14,9 @@ let mapBtn = document.getElementById("map");
 let phoneBtn = document.getElementById("phone");
 let lockBtn = document.getElementById("lock");
 
-let url = "https://randomuser.me/api/";
+let gender = prompt("Please Enter the Gender male/female.If not it will show random user").toLocaleLowerCase();
+let url = `https://randomuser.me/api/?gender=${gender}`;
+
 
 
 //here we added the on window load event that will load all the functionality 
@@ -25,74 +27,36 @@ window.addEventListener("DOMContentLoaded",async()=>{
     let results = jsonObj.results;
 
     results.map((data)=>{
-        console.log(data);
         img.src = `${data.picture.large}`;
         subTitle.innerHTML = `<h4>Hi, My name is</h4>`;
         content.innerHTML = `<h1>${data.name.first} ${data.name.last}</h1>`;
 
         personBtn.addEventListener('mouseover',async function(e) {
-            try{
                 subTitle.innerHTML = `<h4>Hi, My name is</h4>`;
                 content.innerHTML = `<h1>${data.name.first} ${data.name.last}</h1>`;
-
-            }catch(err){
-                console.log(err);
-            }
-            
         })
         mailBtn.addEventListener('mouseover',async function(e) {
-            try{
                 subTitle.innerHTML = `<h4>My email address is</h4>`;
-                content.innerHTML = `<h1>${data.email}</h1>`;
-
-            }catch(err){
-                console.log(err);
-            }
-            
+                content.innerHTML = `<h1>${data.email}</h1>`; 
         })
         calendarBtn.addEventListener('mouseover',async function(e) {
-            try{
                 let date = new Date(data.dob.date)
                 let dob = date.toLocaleDateString();
                 subTitle.innerHTML = `<h4>My birthday is</h4>`;
-                content.innerHTML = `<h1>${dob}</h1>`;
-
-            }catch(err){
-                console.log(err);
-            }
-            
+                content.innerHTML = `<h1>${dob}</h1>`; 
         })
         mapBtn.addEventListener('mouseover',async function(e) {
-            try{
                 subTitle.innerHTML = `<h4>My address is</h4>`;
-                content.innerHTML = `<h1>${data.location.street.number} ${data.location.street.name}</h1>`;
-
-            }catch(err){
-                console.log(err);
-            }
-            
+                content.innerHTML = `<h1>${data.location.street.number} ${data.location.street.name}</h1>`; 
         })
         phoneBtn.addEventListener('mouseover',async function(e) {
-            try{
                 subTitle.innerHTML = `<h4>My phone number is</h4>`;
-                content.innerHTML = `<h1>${data.phone}</h1>`;
-
-            }catch(err){
-                console.log(err);
-            }
-            
+                content.innerHTML = `<h1>${data.phone}</h1>`; 
         })
         lockBtn.addEventListener('mouseover',async function(e) {
-            try{
                 subTitle.innerHTML = `<h4>My password is</h4>`;
-                content.innerHTML = `<h1>${data.login.password}</h1>`;
-
-            }catch(err){
-                console.log(err);
-            }
-            
+                content.innerHTML = `<h1>${data.login.password}</h1>`; 
         })
-    
     })
     }catch(err){
        console.log(err); 
@@ -107,7 +71,7 @@ getUsetBtn.addEventListener("click",async function(){
         let res = await fetch(url);
         let jsonObj = await res.json();
         let results = jsonObj.results;
-        console.log(results);
+        // console.log(results);
 
         results.map((data)=>{
             console.log(data);
@@ -116,71 +80,32 @@ getUsetBtn.addEventListener("click",async function(){
             content.innerHTML = `<h1>${data.name.first} ${data.name.last}</h1>`;
 
             personBtn.addEventListener('mouseover',async function(e) {
-                try{
                     subTitle.innerHTML = `<h4>Hi, My name is</h4>`;
                     content.innerHTML = `<h1>${data.name.first} ${data.name.last}</h1>`;
-
-                }catch(err){
-                    console.log(err);
-                }
-                
             })
             mailBtn.addEventListener('mouseover',async function(e) {
-                try{
                     subTitle.innerHTML = `<h4>My email address is</h4>`;
-                    content.innerHTML = `<h1>${data.email}</h1>`;
-
-                }catch(err){
-                    console.log(err);
-                }
-                
+                    content.innerHTML = `<h1>${data.email}</h1>`;  
             })
             calendarBtn.addEventListener('mouseover',async function(e) {
-                try{
                     let date = new Date(data.dob.date)
                     let dob = date.toLocaleDateString();
                     subTitle.innerHTML = `<h4>My birthday is</h4>`;
                     content.innerHTML = `<h1>${dob}</h1>`;
-
-                }catch(err){
-                    console.log(err);
-                }
-                
             })
             mapBtn.addEventListener('mouseover',async function(e) {
-                try{
                     subTitle.innerHTML = `<h4>My address is</h4>`;
                     content.innerHTML = `<h1>${data.location.street.number} ${data.location.street.name}</h1>`;
-
-                }catch(err){
-                    console.log(err);
-                }
-                
             })
             phoneBtn.addEventListener('mouseover',async function(e) {
-                try{
                     subTitle.innerHTML = `<h4>My phone number is</h4>`;
-                    content.innerHTML = `<h1>${data.phone}</h1>`;
-
-                }catch(err){
-                    console.log(err);
-                }
-                
+                    content.innerHTML = `<h1>${data.phone}</h1>`; 
             })
             lockBtn.addEventListener('mouseover',async function(e) {
-                try{
                     subTitle.innerHTML = `<h4>My password is</h4>`;
                     content.innerHTML = `<h1>${data.login.password}</h1>`;
-
-                }catch(err){
-                    console.log(err);
-                }
-                
-            })
-            
+            })   
         });
-
-        
 
     }catch(err){
         console.log(err);
